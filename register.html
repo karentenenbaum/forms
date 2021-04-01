@@ -4,32 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Sing-up form </title>
+    <link rel="stylesheet" type="text/css" href="reset.css" media="all" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>Sing-up</h1>
-    <form action="" name="register form">
-        <label>
-            <input type="text" name="full name" id="full name" placeholder="Full Name" required>
-        </label>
+    <main>
+        <div class="container">
+            <h1 class="title">User register</h1>
+            <div class="form-container">
+                <h2 class=subtitle> User register for free account</h2>
+                <form action="" name="user register">
+                    <div class=input-container>
+                        <label for="FullName">Full name:</label>
+                        <input type="text" name="full name" id="full name" placeholder="Full Name" required>
+                        <div>
+                            <div class=input-container>
+                                <label for="E-mail Address">E-mail Address:</label>
+                                <input type="e-mail" name="e-mail Address" id="e-mail Address" placeholder="E-mail Address" required>
+                            </div>
+                            <div class="input-container">
+                                <label for="password">Password:</label>
+                                <input type="password" name="password" id="password" placeholder="Password" required>
+                            </div>
 
-        <label>
-            <input type="e-mail" name="e-mail Address" id="e-mail Address" placeholder="E-mail Address" required>
-        </label>
+                            <div>
+                                <div class=input-container>
+                                    <label for="Confirm Password">Confirm Password:</label>
+                                    <input type="password" name="confirm password" id="confirm password"
+                                        placeholder=" Confirm Password" required>
+                                </div>
+                                <div>
 
-        <label>
-            <input type="password" name="password" id="password" placeholder="Password" required>
-        </label>
+                                    <div class=input-container>
+                                        <input type="submit" value="Submit">
+                                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+        </div>
 
-        <label>
-            <input type="password" name="confirm password" id="confirm password" placeholder=" Confirm Password"
-                required>
-        </label>
-        <label>
-            <button type="submit">Sing-up</button>
-        </label>
-    </form>
 
+    </main>
 </body>
 
 </html>
