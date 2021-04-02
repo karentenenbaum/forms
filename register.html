@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Sing-up form </title>
-    <link rel="stylesheet" type="text/css" href="reset.css" media="all" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" media="all" />
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
@@ -15,39 +15,33 @@
             <div class="form-container">
                 <form action="" name="user register">
                     <div class=input-container>
-                        <label for="FullName">Full name:</label>
-                        <input type="text" name="full name" id="fullName" placeholder="Full Name" required>
-                    </div>
-
-
-                    <div class=input-container>
-                        <label for="E-mail Address">E-mail Address:</label>
-                        <input type="e-mail" name="e-mail Address" id="e-mailAddress" placeholder="E-mail Address"
+                        <label for="e-mail">E-mail Address:</label>
+                        <input type="e-mail" name="e-mail" id="e-mailAddress" placeholder="E-mail Address"
                             required>
                     </div>
-
+                    <div class=input-container>
+                        <label for="full_name">Full name:</label>
+                        <input type="text" name="full_name" id="fullName" placeholder="Full Name" required>
+                    </div>
                     <div class="input-container">
                         <label for="password">Password:</label>
                         <input type="password" name="password" id="password" placeholder="Password" required>
                     </div>
-
-
                     <div class=input-container>
-                        <label for="Confirm Password">Confirm Password:</label>
-                        <input type="password" name="confirm password" id="confirmPassword"
-                            placeholder=" Confirm Password" required>
+                        <label for="confirm_password">Confirm Password:</label>
+                        <input type="password" name="confirm_password" id="confirmPassword" placeholder="Confirm Password" required>
                     </div>
-                    
                     <div class=input-container>
                         <button type="submit" class="btn">Sing-up</button>
+                    </div>
+                    <div id="ValidationsResults">
                     </div>
                 </form>
             </div>
         </div>
         </div>
         </div>
-
-
+        <script type="text/javascript" src="./js/register.js"></script>
     </main>
 </body>
 
