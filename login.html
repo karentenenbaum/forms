@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Login form </title>
     <link rel="stylesheet" type="text/css" href="../css/login.html" media="all" />
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
@@ -14,13 +14,12 @@
             <h1 class="title">Log-in</h1>
             <div class="form-container">
                 <form action="" name="log-in">
-                    <div class=input-container>
-                        <label for="E-mail Address">E-mail Address:</label>
-                        <input type="e-mail" name="e-mail Address" id="e-mailAddress" placeholder="E-mail Address"
-                            required>
-                    </div>
-
                     <div class="input-container">
+                            <div class=input-container>
+                                <label for="e-mail">E-mail Address:</label>
+                                <input type="e-mail" name="e-mail" id="e-mailAddress" placeholder="E-mail Address"
+                                    required>
+                                </div>
                         <label for="password">Password:</label>
                         <input type="password" name="password" id="password" placeholder="Password" required>
                     </div>
@@ -28,12 +27,15 @@
                         <button type="submit" class="btn">Log-in</button> 
                         <a href="register.html" class="btn-success">Don't you have an account?</a>
                     </div>
+                    <div id="ValidationsResults">
+                        <h2>Validations results:</h2>
+                    </div>
                 </form>
             </div>
         </div>
         </div>
         </div>
-        <script type="text/javascript" src="../js/login.js"></script>
+        <script type="text/javascript" src="./js/login.js"></script>
     </main>
 </body>
 </html>

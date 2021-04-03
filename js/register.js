@@ -1,4 +1,5 @@
 let errorsArray = [];
+
 checkForm();
 checkLabelFullName();
 checkInputFullName();
@@ -23,20 +24,20 @@ function checkLabelFullName() {
 function checkInputFullName() {
     const inputFullName = document.querySelector(['input[type="text"][id="fullName"][required]']);
     if (!inputFullName) {
-        errorsArray.push('Full name input is missing');
+        errorsArray.push('Full name input is missing or is incorrect');
 
     }
 }
 function checkLabelEmail() {
     const labelEmail = document.querySelector(['label[for="e-mail"]']);
     if (!labelEmail) {
-        errorsArray.push('E-mail label is missing ');
+        errorsArray.push('E-mail label is missing');
     }
 }
 function checkInputEmail() {
     const inputEmail = document.querySelector(['input[type="e-mail"][name=e-mail][required]']);
     if (!inputEmail) {
-        errorsArray.push('E-mail input is missing');
+        errorsArray.push('E-mail input is missing or is incorrect');
     }
 }
 function checkLabelPassword() {
@@ -49,7 +50,7 @@ function checkLabelPassword() {
 function checkInputPassword() {
     const inputPassword = document.querySelector(['input[type="password"][name="password"][required]']);
     if (!inputPassword) {
-        errorsArray.push('Password input is missing');
+        errorsArray.push('Password input is missing or is incorrect');
 
     }
 }
@@ -65,21 +66,28 @@ function checkLabelConfirmPassword() {
 function checkInputConfirmPassword() {
     const inputConfirmPassword = document.querySelector(['input[type="password"][name="confirm_password"][required]']);
     if (!inputConfirmPassword) {
-        errorsArray.push('Confirm password input is missing');
+        errorsArray.push('Confirm password input is missing or is incorrect');
     }
 }
 
 function checkSubmitButton() {
     const submitButton = document.querySelector(['button[type="submit"]']);
-    if (!submitbutton) {
+    if (!submitButton) {
         errorsArray.push('Missing submit button')
     }
 }
 
-const ValidationsResults = document.getElementById("ValidationsResults">);
-if(errorsArray === 0){
-    document.appendChild('Every validation has passed');
-} else(
-    document.appendChild('')
- )    
+const ValidationsResults = document.getElementById("ValidationsResults");
+ValidationsResults.style['display'] = 'block';
+
+if(errorsArray.length === 0) {
+    ValidationsResults.innerHTML += '<p>Every validation has passed</p>';
+} else {
+    for(let i = 0; i< errorsArray.length; i++) {
+       console.log(errorsArray[i]);
+       ValidationsResults.innerHTML += '<p>' + errorsArray[i] + '<p>';
+        
+    } 
+    
+
 }

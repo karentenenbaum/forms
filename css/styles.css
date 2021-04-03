@@ -38,6 +38,9 @@ main{
     margin-top: 20px;
 }
 
+#ValidationsResults {
+    display: none;
+}
 
 
 
