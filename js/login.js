@@ -3,9 +3,10 @@ let errorsArray = [];
 checkForm();
 checkLabelEmail();
 checkInputEmail();
-checkLabelPassword()
+checkLabelPassword();
 checkInputPassword();
-checkLoginButton()
+checkLoginButton();
+checkLink();
 
 function checkForm() {
     const formElement = document.getElementsByTagName("form")[0];
@@ -23,7 +24,7 @@ function checkLabelEmail() {
 function checkInputEmail() {
     const inputEmail = document.querySelector(['input[type="e-mail"][name=e-mail][required]']);
     if (!inputEmail) {
-        errorsArray.push('E-mail input is missing or is incorrect');
+        errorsArray.push('E-mail input is missing or incorrect');
     }
 }
 function checkLabelPassword() {
@@ -36,8 +37,7 @@ function checkLabelPassword() {
 function checkInputPassword() {
     const inputPassword = document.querySelector(['input[type="password"][name="password"][required]']);
     if (!inputPassword) {
-        errorsArray.push('Password input is missing or is incorrect');
-
+        errorsArray.push('Password input is missing or incorrect');
     }
 }
 
@@ -48,17 +48,22 @@ function checkLoginButton() {
     }
 }
 
+function checkLink() {
+    const linkBtn = document.querySelector(["a[href='#ValidationsResults']"]);
+    console.log(linkBtn);
+    
+    if (!linkBtn) {
+        errorsArray.push('Button content is missing or invalid');
+    }
+}
 const ValidationsResults = document.getElementById("ValidationsResults");
 ValidationsResults.style['display'] = 'block';
 
-if(errorsArray.length === 0) {
+if (errorsArray.length === 0) {
     ValidationsResults.innerHTML += '<p>Every validation has passed</p>';
 } else {
-    for(let i = 0; i< errorsArray.length; i++) {
-       console.log(errorsArray[i]);
-       ValidationsResults.innerHTML += '<p>' + errorsArray[i] + '<p>';
-        
-    } 
-    
-
+    for (let i = 0; i < errorsArray.length; i++) {
+        console.log(errorsArray[i]);
+        ValidationsResults.innerHTML += '<p>' + errorsArray[i] + '<p>';
+    }
 }

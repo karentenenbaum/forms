@@ -32,14 +32,17 @@ main{
 
 .btn {
     color: #EB5A47;
+    font-size: large;
 }
 
 .btn-success {
     margin-top: 20px;
+    color: black;
 }
 
 #ValidationsResults {
     display: none;
+    color:#EB5A47;
 }
 
 
