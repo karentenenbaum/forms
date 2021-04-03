@@ -31,6 +31,7 @@ main{
 }
 
 .btn {
+    margin: 12px;
     color: #EB5A47;
     font-size: large;
 }
@@ -38,6 +39,7 @@ main{
 .btn-success {
     margin-top: 20px;
     color: black;
+    background-color:salmon;;
 }
 
 #ValidationsResults {

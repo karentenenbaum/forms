@@ -7,49 +7,52 @@ checkLabelEmail();
 checkLabelPassword()
 checkInputPassword();
 checkLabelConfirmPassword();
-checkSubmitButton()
+checkSubmitButton();
+checkResetButton();
+checkControlForm();
+
 
 function checkForm() {
     const formElement = document.getElementsByTagName("form")[0];
-    if (!formElement) {
+    if(!formElement) {
         errorsArray.push('form is not found');
     }
 }
 function checkLabelFullName() {
     const labelFullName = document.querySelector('label[for="full_name"]');
-    if (!labelFullName) {
+    if(!labelFullName) {
         errorsArray.push('Full name label is missing');
     }
 }
 function checkInputFullName() {
     const inputFullName = document.querySelector(['input[type="text"][id="fullName"][required]']);
-    if (!inputFullName) {
+    if(!inputFullName) {
         errorsArray.push('Full name input is missing or is incorrect');
 
     }
 }
 function checkLabelEmail() {
     const labelEmail = document.querySelector(['label[for="e-mail"]']);
-    if (!labelEmail) {
+    if(!labelEmail) {
         errorsArray.push('E-mail label is missing');
     }
 }
 function checkInputEmail() {
     const inputEmail = document.querySelector(['input[type="e-mail"][name=e-mail][required]']);
-    if (!inputEmail) {
+    if(!inputEmail) {
         errorsArray.push('E-mail input is missing or is incorrect');
     }
 }
 function checkLabelPassword() {
     const labelPassword = document.querySelector(['label[for="password"]']);
-    if (!labelPassword) {
+    if(!labelPassword) {
         errorsArray.push('Password label is missing');
     }
 }
 
 function checkInputPassword() {
     const inputPassword = document.querySelector(['input[type="password"][name="password"][required]']);
-    if (!inputPassword) {
+    if(!inputPassword) {
         errorsArray.push('Password input is missing or is incorrect');
 
     }
@@ -57,23 +60,36 @@ function checkInputPassword() {
 
 function checkLabelConfirmPassword() {
     const labelConfirmPassword = document.querySelector(['label[for="confirm_password"]']);
-    if (!labelConfirmPassword) {
+    if(!labelConfirmPassword) {
         errorsArray.push('Confirm password label is missing');
-
     }
 }
 
 function checkInputConfirmPassword() {
     const inputConfirmPassword = document.querySelector(['input[type="password"][name="confirm_password"][required]']);
-    if (!inputConfirmPassword) {
+    if(!inputConfirmPassword) {
         errorsArray.push('Confirm password input is missing or is incorrect');
     }
 }
 
 function checkSubmitButton() {
     const submitButton = document.querySelector(['button[type="submit"]']);
-    if (!submitButton) {
+    if(!submitButton) {
         errorsArray.push('Missing submit button')
+    }
+}
+
+function checkResetButton() {
+    const checkResetButton = document.querySelector (['button[type="reset"]']);
+    if(!submitButton) {
+        errorsArray.push('Missing reset button');
+    }
+}
+
+function checkControlFormBtn() {
+    const checkControlForm = document.querySelector(['button[type="button"]']);
+        if(!checkControlForm) {
+        errorsArray.push('Missing control button');
     }
 }
 

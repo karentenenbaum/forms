@@ -17,49 +17,47 @@ function checkForm() {
 
 function checkLabelEmail() {
     const labelEmail = document.querySelector(['label[for="e-mail"]']);
-    if (!labelEmail) {
+    if(!labelEmail) {
         errorsArray.push('E-mail label is missing');
     }
 }
 function checkInputEmail() {
     const inputEmail = document.querySelector(['input[type="e-mail"][name=e-mail][required]']);
-    if (!inputEmail) {
+    if(!inputEmail) {
         errorsArray.push('E-mail input is missing or incorrect');
     }
 }
 function checkLabelPassword() {
     const labelPassword = document.querySelector(['label[for="password"]']);
-    if (!labelPassword) {
+    if(!labelPassword) {
         errorsArray.push('Password label is missing');
     }
 }
 
 function checkInputPassword() {
     const inputPassword = document.querySelector(['input[type="password"][name="password"][required]']);
-    if (!inputPassword) {
+    if(!inputPassword) {
         errorsArray.push('Password input is missing or incorrect');
     }
 }
 
 function checkLoginButton() {
     const loginButton = document.querySelector(['button[type="submit"]']);
-    if (!loginButton) {
+    if(!loginButton) {
         errorsArray.push('Missing submit button');
     }
 }
 
 function checkLink() {
-    const linkBtn = document.querySelector(["a[href='#ValidationsResults']"]);
-    console.log(linkBtn);
-    
-    if (!linkBtn) {
+    const linkBtn = document.querySelector(["a[href='register.html']"]); 
+    if(!linkBtn) {
         errorsArray.push('Button content is missing or invalid');
     }
 }
 const ValidationsResults = document.getElementById("ValidationsResults");
 ValidationsResults.style['display'] = 'block';
 
-if (errorsArray.length === 0) {
+if(errorsArray.length === 0) {
     ValidationsResults.innerHTML += '<p>Every validation has passed</p>';
 } else {
     for (let i = 0; i < errorsArray.length; i++) {
