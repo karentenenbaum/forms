@@ -16,13 +16,13 @@ function checkForm() {
 }
 
 function checkLabelEmail() {
-    const labelEmail = document.querySelector(['label[for="e-mail"]']);
+    const labelEmail = document.querySelector(['label[for="email"]']);
     if(!labelEmail) {
         errorsArray.push('E-mail label is missing');
     }
 }
 function checkInputEmail() {
-    const inputEmail = document.querySelector(['input[type="e-mail"][name=e-mail][required]']);
+    const inputEmail = document.querySelector(['input[type="email"][name=email][required]']);
     if(!inputEmail) {
         errorsArray.push('E-mail input is missing or incorrect');
     }

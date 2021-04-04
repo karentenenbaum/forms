@@ -4,48 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Sing-up form </title>
-    <link rel="stylesheet" type="text/css" href="./css/reset.css" media="all" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
-    <main>
-        <div class="container">
-            <h1 class="title">User register</h1>
-            <div class="form-container">
-                <form action="" name="user register">
-                    <div class=input-container>
-                        <label for="e-mail">E-mail Address:</label>
-                        <input type="e-mail" name="e-mail" id="e-mailAddress" placeholder="E-mail Address"
-                            required>
-                    </div>
-                    <div class=input-container>
-                        <label for="full_name">Full name:</label>
-                        <input type="text" name="full_name" id="fullName" placeholder="Full Name" required>
-                    </div>
-                    <div class="input-container">
-                        <label for="password">Password:</label>
-                        <input type="password" name="password" id="password" placeholder="Password" required>
-                    </div>
-                    <div class=input-container>
-                        <label for="confirm_password">Confirm Password:</label>
-                        <input type="password" name="confirm_password" id="confirmPassword" placeholder="Confirm Password" required>
-                    </div>
-                    <div class=input-container>
-                        <button type="submit" class="btn">Sing-up</button>
-                        <button type="reset" class ="btn">Reset form</button>
-                        <button type="button" class ="btn">Control form</button>
-                    </div>
-                    <div id="ValidationsResults">
-                        <h2>Validations results:</h2>
-                    </div>
-                </form>
+<main>
+    <div class="container">
+        <h1 class="title">User register</h1>
+        <div class="form-container">
+            <form action="" name="user register">
+                <div class=input-container>
+                    <label for="email">E-mail Address:</label>
+                    <input type="email" name="email" placeholder="E-mail Address"
+                           required>
+                </div>
+                <div class=input-container>
+                    <label for="full_name">Full name:</label>
+                    <input type="text" name="full_name" placeholder="Full Name" required>
+                </div>
+                <div class="input-container">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class=input-container>
+                    <label for="confirm_password">Confirm Password:</label>
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                </div>
+                <div class=input-container>
+                    <button type="submit" class="btn">Sing-up</button>
+                    <button type="reset" class="btn">Reset form</button>
+                    <button type="button" class="btn">Control form</button>
+                </div>
+            </form>
+
+            <div id="ValidationsResults">
+                <h2>Validations results:</h2>
             </div>
         </div>
-        </div>
-        </div>
-        <script type="text/javascript" src="./js/register.js"></script>
-    </main>
+    </div>
+    <script type="text/javascript" src="./js/register.js"></script>
+</main>
 </body>
 
 </html>
