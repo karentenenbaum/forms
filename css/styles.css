@@ -64,6 +64,11 @@ input {
     color: darkgray;
 }
 
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .btn {
     margin: 10px 0;
     color: white;
@@ -71,12 +76,6 @@ input {
     border-width: 0;
     font-size: large;
     padding: 5px;
-}
-
-.btn-success {
-    margin-top: 20px;
-    color: black;
-    background-color:salmon;;
 }
 
 #ValidationsResults {

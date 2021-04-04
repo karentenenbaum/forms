@@ -51,7 +51,7 @@ function checkLoginButton() {
 function checkLink() {
     const linkBtn = document.querySelector(["a[href='register.html']"]); 
     if(!linkBtn) {
-        errorsArray.push('Button content is missing or invalid');
+        errorsArray.push('link to register is missing or invalid');
     }
 }
 const ValidationsResults = document.getElementById("ValidationsResults");
@@ -62,6 +62,6 @@ if(errorsArray.length === 0) {
 } else {
     for (let i = 0; i < errorsArray.length; i++) {
         console.log(errorsArray[i]);
-        ValidationsResults.innerHTML += '<p>' + errorsArray[i] + '<p>';
+        ValidationsResults.innerHTML += '<li>' + errorsArray[i] + '</li>>';
     }
 }
