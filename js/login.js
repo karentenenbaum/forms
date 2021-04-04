@@ -1,59 +1,69 @@
+document.getElementById('control-form').addEventListener('click', function() {
+
 let errorsArray = [];
 
-checkForm();
-checkLabelEmail();
-checkInputEmail();
-checkLabelPassword();
-checkInputPassword();
-checkLoginButton();
-checkLink();
+checkForm(errorsArray);
 
-function checkForm() {
+checkLabelEmail(errorsArray);
+checkInputEmail(errorsArray);
+
+checkLabelPassword(errorsArray);
+checkInputPassword(errorsArray);
+
+checkLoginButton(errorsArray);
+checkLink(errorsArray);
+
+check(errorsArray);
+
+});
+
+function checkForm(errorsArray) {
     const formElement = document.getElementsByTagName("form")[0];
     if (!formElement) {
         errorsArray.push('form is not found');
     }
 }
 
-function checkLabelEmail() {
+function checkLabelEmail(errorsArray) {
     const labelEmail = document.querySelector(['label[for="email"]']);
     if(!labelEmail) {
         errorsArray.push('E-mail label is missing');
     }
 }
-function checkInputEmail() {
+function checkInputEmail(errorsArray) {
     const inputEmail = document.querySelector(['input[type="email"][name=email][required]']);
     if(!inputEmail) {
         errorsArray.push('E-mail input is missing or incorrect');
     }
 }
-function checkLabelPassword() {
+function checkLabelPassword(errorsArray) {
     const labelPassword = document.querySelector(['label[for="password"]']);
     if(!labelPassword) {
         errorsArray.push('Password label is missing');
     }
 }
 
-function checkInputPassword() {
+function checkInputPassword(errorsArray) {
     const inputPassword = document.querySelector(['input[type="password"][name="password"][required]']);
     if(!inputPassword) {
         errorsArray.push('Password input is missing or incorrect');
     }
 }
 
-function checkLoginButton() {
+function checkLoginButton(errorsArray) {
     const loginButton = document.querySelector(['button[type="submit"]']);
     if(!loginButton) {
         errorsArray.push('Missing submit button');
     }
 }
 
-function checkLink() {
+function checkLink(errorsArray) {
     const linkBtn = document.querySelector(["a[href='register.html']"]); 
     if(!linkBtn) {
         errorsArray.push('link to register is missing or invalid');
     }
 }
+function check(errorsArray){
 const ValidationsResults = document.getElementById("ValidationsResults");
 ValidationsResults.style['display'] = 'block';
 
@@ -63,5 +73,6 @@ if(errorsArray.length === 0) {
     for (let i = 0; i < errorsArray.length; i++) {
         console.log(errorsArray[i]);
         ValidationsResults.innerHTML += '<li>' + errorsArray[i] + '</li>>';
+    }
     }
 }

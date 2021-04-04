@@ -1,7 +1,7 @@
-document.getElementById('control-form').addEventListener('click', function () {
+document.getElementById('control-form').addEventListener('click', function() {
     let errorsArray = [];
 
-    checkForm(errorsArray);
+    checkForm(errorsArray, "form", 'form is not found');
 
     checkLabelFullName(errorsArray);
     checkInputFullName(errorsArray);
@@ -24,10 +24,10 @@ document.getElementById('control-form').addEventListener('click', function () {
 });
 
 
-function checkForm(errorsArray) {
+function checkForm(errorsArray, querySelector, message) {
     const formElement = document.querySelector("form");
     if (!formElement) {
-        errorsArray.push('form is not found');
+        errorsArray.push('message');
     }
 }
 
