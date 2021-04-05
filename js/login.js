@@ -1,69 +1,52 @@
-document.getElementById('control-form').addEventListener('click', function() {
-
 let errorsArray = [];
 
-checkForm(errorsArray);
-
-checkLabelEmail(errorsArray);
-checkInputEmail(errorsArray);
-
-checkLabelPassword(errorsArray);
-checkInputPassword(errorsArray);
-
-checkLoginButton(errorsArray);
-checkLink(errorsArray);
-
-check(errorsArray);
-
-});
-
-function checkForm(errorsArray) {
+function checkForm() {
     const formElement = document.getElementsByTagName("form")[0];
     if (!formElement) {
         errorsArray.push('form is not found');
     }
 }
 
-function checkLabelEmail(errorsArray) {
+function checkLabelEmail() {
     const labelEmail = document.querySelector(['label[for="email"]']);
     if(!labelEmail) {
         errorsArray.push('E-mail label is missing');
     }
 }
-function checkInputEmail(errorsArray) {
+function checkInputEmail() {
     const inputEmail = document.querySelector(['input[type="email"][name=email][required]']);
     if(!inputEmail) {
         errorsArray.push('E-mail input is missing or incorrect');
     }
 }
-function checkLabelPassword(errorsArray) {
+function checkLabelPassword() {
     const labelPassword = document.querySelector(['label[for="password"]']);
     if(!labelPassword) {
         errorsArray.push('Password label is missing');
     }
 }
 
-function checkInputPassword(errorsArray) {
+function checkInputPassword() {
     const inputPassword = document.querySelector(['input[type="password"][name="password"][required]']);
     if(!inputPassword) {
         errorsArray.push('Password input is missing or incorrect');
     }
 }
 
-function checkLoginButton(errorsArray) {
+function checkLoginButton() {
     const loginButton = document.querySelector(['button[type="submit"]']);
     if(!loginButton) {
         errorsArray.push('Missing submit button');
     }
 }
 
-function checkLink(errorsArray) {
+function checkLink() {
     const linkBtn = document.querySelector(["a[href='register.html']"]); 
     if(!linkBtn) {
         errorsArray.push('link to register is missing or invalid');
     }
 }
-function check(errorsArray){
+function check(){
 const ValidationsResults = document.getElementById("ValidationsResults");
 ValidationsResults.style['display'] = 'block';
 
@@ -76,3 +59,16 @@ if(errorsArray.length === 0) {
     }
     }
 }
+
+checkForm();
+
+checkLabelEmail();
+checkInputEmail();
+
+checkLabelPassword();
+checkInputPassword();
+
+checkLoginButton();
+checkLink();
+
+check();

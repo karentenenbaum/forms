@@ -1,44 +1,20 @@
-document.getElementById('control-form').addEventListener('click', function() {
-    let errorsArray = [];
+let errorsArray = [];
 
-    checkForm(errorsArray, "form", 'form is not found');
-
-    checkLabelFullName(errorsArray);
-    checkInputFullName(errorsArray);
-
-    checkInputEmail(errorsArray);
-    checkLabelEmail(errorsArray);
-
-    checkLabelPassword(errorsArray);
-    checkInputPassword(errorsArray);
-
-    checkLabelConfirmPassword(errorsArray);
-    checkInputConfirmPassword(errorsArray);
-
-    checkSubmitButton(errorsArray);
-    checkResetButton(errorsArray);
-    checkControlFormBtn(errorsArray);
-    checkLink(errorsArray);
-
-    setValidationsResult(errorsArray);
-});
-
-
-function checkForm(errorsArray, querySelector, message) {
+function checkForm() {
     const formElement = document.querySelector("form");
     if (!formElement) {
         errorsArray.push('message');
     }
 }
 
-function checkLabelFullName(errorsArray) {
+function checkLabelFullName() {
     const labelFullName = document.querySelector('label[for="full_name"]');
     if (!labelFullName) {
         errorsArray.push('Full name label is missing');
     }
 }
 
-function checkInputFullName(errorsArray) {
+function checkInputFullName() {
     const inputFullName = document.querySelector(['input[type="text"][name="full_name"][required]']);
     if (!inputFullName) {
         errorsArray.push('Full name input is missing or is incorrect');
@@ -46,28 +22,28 @@ function checkInputFullName(errorsArray) {
     }
 }
 
-function checkLabelEmail(errorsArray) {
+function checkLabelEmail() {
     const labelEmail = document.querySelector(['label[for="email"]']);
     if (!labelEmail) {
         errorsArray.push('E-mail label is missing');
     }
 }
 
-function checkInputEmail(errorsArray) {
+function checkInputEmail() {
     const inputEmail = document.querySelector(['input[type="email"][name="email"][required]']);
     if (!inputEmail) {
         errorsArray.push('E-mail input is missing or is incorrect');
     }
 }
 
-function checkLabelPassword(errorsArray) {
+function checkLabelPassword() {
     const labelPassword = document.querySelector(['label[for="password"]']);
     if (!labelPassword) {
         errorsArray.push('Password label is missing');
     }
 }
 
-function checkInputPassword(errorsArray) {
+function checkInputPassword() {
     const inputPassword = document.querySelector(['input[type="password"][name="password"][required]']);
     if (!inputPassword) {
         errorsArray.push('Password input is missing or is incorrect');
@@ -75,35 +51,35 @@ function checkInputPassword(errorsArray) {
     }
 }
 
-function checkLabelConfirmPassword(errorsArray) {
+function checkLabelConfirmPassword() {
     const labelConfirmPassword = document.querySelector(['label[for="confirm_password"]']);
     if (!labelConfirmPassword) {
         errorsArray.push('Confirm password label is missing');
     }
 }
 
-function checkInputConfirmPassword(errorsArray) {
+function checkInputConfirmPassword() {
     const inputConfirmPassword = document.querySelector(['input[type="password"][name="confirm_password"][required]']);
     if (!inputConfirmPassword) {
         errorsArray.push('Confirm password input is missing or is incorrect');
     }
 }
 
-function checkSubmitButton(errorsArray) {
+function checkSubmitButton() {
     const submitButton = document.querySelector(['button[type="submit"]']);
     if (!submitButton) {
         errorsArray.push('Missing submit button')
     }
 }
 
-function checkResetButton(errorsArray) {
+function checkResetButton() {
     const checkResetButton = document.querySelector(['button[type="reset"]']);
     if (!checkResetButton) {
         errorsArray.push('Missing reset button');
     }
 }
 
-function checkControlFormBtn(errorsArray) {
+function checkControlFormBtn() {
     const checkControlForm = document.querySelector(['button[type="button"][id="control-form"]']);
     if (!checkControlForm) {
         errorsArray.push('Missing control button');
@@ -112,13 +88,12 @@ function checkControlFormBtn(errorsArray) {
 
 function checkLink() {
     const linkBtn = document.querySelector(["a[href='login.html']"]);
-    if(!linkBtn) {
+    if (!linkBtn) {
         errorsArray.push('link to login is missing or invalid');
     }
 }
 
-
-function setValidationsResult(errorsArray) {
+function setValidationsResult() {
     const validationsResults = document.getElementById("ValidationsResults");
     validationsResults.style['display'] = 'block';
 
@@ -132,3 +107,23 @@ function setValidationsResult(errorsArray) {
     }
 }
 
+checkForm();
+
+checkLabelFullName();
+checkInputFullName();
+
+checkInputEmail();
+checkLabelEmail();
+
+checkLabelPassword();
+checkInputPassword();
+
+checkLabelConfirmPassword();
+checkInputConfirmPassword();
+
+checkSubmitButton();
+checkResetButton();
+checkControlFormBtn();
+checkLink();
+
+setValidationsResult();
