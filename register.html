@@ -17,21 +17,30 @@
         <div class="form-container">
             <form action="" name="user register">
                 <div class=input-container>
-                    <label for="email">E-mail Address:</label>
-                    <input type="email" name="email" placeholder="E-mail Address"
-                           required>
+                    <label for="full_name">Full name:</label>
+                    <input type="text" name="full_name" placeholder="Full Name" id="fullNameInput" required>
+                    <div id="checkFullName" class="errorMessage">
+                    </div>
                 </div>
                 <div class=input-container>
-                    <label for="full_name">Full name:</label>
-                    <input type="text" name="full_name" placeholder="Full Name" required>
+                    <label for="email">E-mail Address:</label>
+                    <input type="email" name="email" placeholder="E-mail Address" id="emailInput"
+                           required>
+                           <div id="checkEmail" class="errorMessage">
+                           </div>
                 </div>
-                <div class="input-container">
+                 <div class="input-container">
                     <label for="password">Password:</label>
-                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Password" id="passwordInput" required>
+                    <div id='checkPassword' class="errorMessage">
+                    </div>
                 </div>
                 <div class="input-container">
                     <label for="confirm_password">Confirm Password:</label>
-                    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" id="confirmPasswordInput"
+                     required>
+                     <div id="checkConfirmPassword" class="errorMessage">
+                     </div>
                 </div>
                 <div class="btn-container">
                     <button type="submit" class="btn">Sing-up</button>
@@ -48,6 +57,8 @@
         </div>
     </div>
     <script type="text/javascript" src="./js/register.js"></script>
+    <script type="text/javascript" src="./js/validations.js"></script>
+
 </main>
 </body>
 
