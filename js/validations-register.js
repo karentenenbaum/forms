@@ -6,6 +6,37 @@ document.getElementById('fullNameInput').addEventListener('focus', (e) => {
     checkMessageDissapears(e, 'checkFullName');
 });
 
+document.getElementById('emailInput').addEventListener('blur', (e) => {
+    console.log('blur emaik');
+    validationEmail(e);
+});
+
+document.getElementById('emailInput').addEventListener('focus', (e) => {
+    checkMessageDissapears(e, 'checkEmail');
+});
+
+document.getElementById('passwordInput').addEventListener('blur', (e) => {
+    validationPassword(e);
+});
+
+document.getElementById('passwordInput').addEventListener('focus', (e) => {
+    checkMessageDissapears(e, 'checkPassword');
+});
+
+document.getElementById('confirmPasswordInput').addEventListener('blur', (e) => {
+    validationConfirmPassword(e, 'checkConfirmPassword');
+});
+
+document.getElementById('confirmPasswordInput').addEventListener('focus', (e) => {
+    checkMessageDissapears(e, 'checkConfirmPassword');
+});
+
+document.getElementById('registerForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    showValues();
+    sendRequest();
+});
+
 function validationFullName(e) {
     const value = e.target.value;
     const regex = new RegExp('^(?=.*[A-Za-z])(?=.* )[A-Za-z ]{6,}$');
@@ -22,10 +53,6 @@ function checkMessageDissapears(e, field) {
     checkMessage.style.display = 'none';
 }
 
-document.getElementById('emailInput').addEventListener('blur', (e) => {
-    validationEmail(e);
-});
-
 function validationEmail(e) {
     const value = e.target.value;
     const regex = new RegExp('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$');
@@ -35,15 +62,6 @@ function validationEmail(e) {
         checkElementOne.style.display = 'block';
     }
 }
-
-document.getElementById('emailInput').addEventListener('focus', (e) => {
-    checkMessageDissapears(e, 'checkEmail');
-});
-
-
-document.getElementById('passwordInput').addEventListener('blur', (e) => {
-    validationPassword(e);
-});
 
 function validationPassword(e) {
     const value = e.target.value;
@@ -56,37 +74,39 @@ function validationPassword(e) {
     }
 }
 
-document.getElementById('passwordInput').addEventListener('focus', (e) => {
-    checkMessageDissapears(e, 'checkPassword');
-});
-
-
-
 function validationConfirmPassword(e) {
     const passwordValue = document.getElementById('passwordInput').value;
     const confirmPasswordValue = document.getElementById('confirmPasswordInput').value;
 
-    if (!passwordValue === confirmPasswordValue) {
-        const checkelementThree = document.getElementById('confirmPasswordImput');
+    if (passwordValue !== confirmPasswordValue) {
+        const checkElementThree = document.getElementById('checkConfirmPassword');
         checkElementThree.innerHTML = "Password confirmation field must be equal to the content of the Password input.";
         checkElementThree.style.display = 'block';
     }
 
 }
 
-document.getElementById('confirmPasswordInput').addEventListener('focus', (e) => {
-    checkMessageDissapears(e, 'checkConfirmPassword');
-});
+function showValues() {
+    const fullnameValue = document.getElementById('fullNameInput').value;
+    const emailvalue = document.getElementById('emailInput').value;
+    const passwordValue = document.getElementById('passwordInput').value;
+    const confirmPasswordValue = document.getElementById('confirmPasswordInput').value;
 
-document.getElementById('signUpButton').addEventListener('click', (e) => {
-    showValues(e);
-});
-
-function showValues(e) {
     const valuesToShow = document.getElementById('ValidationsResults');
     valuesToShow.innerHTML = null;
-    valuesToShow.innerHTML = document.getElementById('fullNameInput').value;
-    valuesToShow.innerHTML = document.getElementById('emailInput').value;
-    valuesToShow.innerHTML = document.getElementById('passwordInput').value;
-    valuesToShow.innerHTML = document.getElementById('confirmPasswordInput').value;
+    valuesToShow.innerHTML =
+        `<ul>
+            <li>Fullname: ${fullnameValue}</li>
+            <li>Email: ${emailvalue}</li>
+            <li>Password: ${passwordValue}</li>
+            <li>Confirm: ${confirmPasswordValue}</li>
+        </ul>`;
+}
+
+function sendRequest() {
+    const emailvalue = document.getElementById('emailInput').value;
+    fetch(`https://jsonplaceholder.typicode.com/users?email=${emailvalue}`, {
+        method: 'GET'
+    })
+        .then((e) => console.log(e));
 }

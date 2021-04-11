@@ -18,7 +18,6 @@ function checkInputFullName() {
     const inputFullName = document.querySelector(['input[type="text"][name="full_name"][required]']);
     if (!inputFullName) {
         errorsArray.push('Full name input is missing or is incorrect');
-
     }
 }
 
