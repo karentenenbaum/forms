@@ -77,3 +77,16 @@ function validationConfirmPassword(e) {
 document.getElementById('confirmPasswordInput').addEventListener('focus', (e) => {
     checkMessageDissapears(e, 'checkConfirmPassword');
 });
+
+document.getElementById('signUpButton').addEventListener('click', (e) => {
+    showValues(e);
+});
+
+function showValues(e) {
+    const valuesToShow = document.getElementById('ValidationsResults');
+    valuesToShow.innerHTML = null;
+    valuesToShow.innerHTML= document.getElementById('fullNameInput').value;
+    valuesToShow.innerHTML= document.getElementById('emailInput').value;
+    valuesToShow.innerHTML= document.getElementById('passwordInput').value;
+    valuesToShow.innerHTML= document.getElementById('confirmPasswordInput').value;
+}
