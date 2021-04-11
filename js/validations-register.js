@@ -7,7 +7,6 @@ document.getElementById('fullNameInput').addEventListener('focus', (e) => {
 });
 
 document.getElementById('emailInput').addEventListener('blur', (e) => {
-    console.log('blur emaik');
     validationEmail(e);
 });
 
