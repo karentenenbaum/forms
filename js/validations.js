@@ -57,7 +57,7 @@ function validationPassword(e) {
 }
 
 document.getElementById('passwordInput').addEventListener('focus', (e) => {
-    checkMessageDissapears(e,'checkPassword');
+    checkMessageDissapears(e, 'checkPassword');
 });
 
 
@@ -85,8 +85,8 @@ document.getElementById('signUpButton').addEventListener('click', (e) => {
 function showValues(e) {
     const valuesToShow = document.getElementById('ValidationsResults');
     valuesToShow.innerHTML = null;
-    valuesToShow.innerHTML= document.getElementById('fullNameInput').value;
-    valuesToShow.innerHTML= document.getElementById('emailInput').value;
-    valuesToShow.innerHTML= document.getElementById('passwordInput').value;
-    valuesToShow.innerHTML= document.getElementById('confirmPasswordInput').value;
+    valuesToShow.innerHTML = document.getElementById('fullNameInput').value;
+    valuesToShow.innerHTML = document.getElementById('emailInput').value;
+    valuesToShow.innerHTML = document.getElementById('passwordInput').value;
+    valuesToShow.innerHTML = document.getElementById('confirmPasswordInput').value;
 }
