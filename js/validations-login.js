@@ -48,14 +48,14 @@ function validationPassword(e) {
 }
 
 function showValues() {
-    const emailvalue = document.getElementById('emailInput').value;
+    const emailValue = document.getElementById('emailInput').value;
     const passwordValue = document.getElementById('passwordInput').value;
 
     const valuesToShow = document.getElementById('ValidationsResults');
     valuesToShow.innerHTML = null;
     valuesToShow.innerHTML =
         `<ul>
-            <li>Email: ${emailvalue}</li>
+            <li>Email: ${emailValue}</li>
             <li>Password: ${passwordValue}</li>
         </ul>`;
 }

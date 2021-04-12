@@ -86,8 +86,8 @@ function validationConfirmPassword(e) {
 }
 
 function showValues() {
-    const fullnameValue = document.getElementById('fullNameInput').value;
-    const emailvalue = document.getElementById('emailInput').value;
+    const fullNameValue = document.getElementById('fullNameInput').value;
+    const emailValue = document.getElementById('emailInput').value;
     const passwordValue = document.getElementById('passwordInput').value;
     const confirmPasswordValue = document.getElementById('confirmPasswordInput').value;
 
@@ -95,8 +95,8 @@ function showValues() {
     valuesToShow.innerHTML = null;
     valuesToShow.innerHTML =
         `<ul>
-            <li>Fullname: ${fullnameValue}</li>
-            <li>Email: ${emailvalue}</li>
+            <li>Fullname: ${fullNameValue}</li>
+            <li>Email: ${emailValue}</li>
             <li>Password: ${passwordValue}</li>
             <li>Confirm: ${confirmPasswordValue}</li>
         </ul>`;
