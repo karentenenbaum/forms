@@ -103,9 +103,16 @@ function showValues() {
 }
 
 function sendRequest() {
+    const fullNameValue = document.getElementById('fullNameInput').value;
     const emailvalue = document.getElementById('emailInput').value;
-    fetch(`https://jsonplaceholder.typicode.com/users?email=${emailvalue}`, {
-        method: 'GET'
+    const passwordValue = document.getElementById('passwordInput').value;
+    fetch(`http://localhost:4000/user`, {
+        method: 'POST', 
+        body: {
+            fullname: fullNameValue,
+            email: emailvalue,
+            password: passwordValue,
+        }
     })
         .then((e) => console.log(e));
 }
