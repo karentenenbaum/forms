@@ -17,7 +17,7 @@ document.getElementById('passwordInput').addEventListener('focus', (e) => {
 document.getElementById('loginForm').addEventListener('submit', (e) => {
     e.preventDefault();
     showValues();
-    sendRequest();
+    handleLogin();
 });
 
 
@@ -60,10 +60,19 @@ function showValues() {
         </ul>`;
 }
 
-function sendRequest() {
+function handleLogin() {
     const emailvalue = document.getElementById('emailInput').value;
-    fetch(`https://jsonplaceholder.typicode.com/users?email=${emailvalue}`, {
-        method: 'GET'
+    const passwordValue = document.getElementById('passwordInput').value;
+
+    fetch(`http://localhost:4000/login`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            email: emailvalue,
+            password: passwordValue
+        })
     })
         .then((e) => console.log(e));
 }

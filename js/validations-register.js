@@ -33,7 +33,7 @@ document.getElementById('confirmPasswordInput').addEventListener('focus', (e) =>
 document.getElementById('registerForm').addEventListener('submit', (e) => {
     e.preventDefault();
     showValues();
-    sendRequest();
+    handleRegister();
 });
 
 function validationFullName(e) {
@@ -102,17 +102,20 @@ function showValues() {
         </ul>`;
 }
 
-function sendRequest() {
+function handleRegister() {
     const fullNameValue = document.getElementById('fullNameInput').value;
     const emailvalue = document.getElementById('emailInput').value;
     const passwordValue = document.getElementById('passwordInput').value;
-    fetch(`http://localhost:4000/user`, {
-        method: 'POST', 
-        body: {
+    fetch(`http://localhost:4000/register`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
             fullname: fullNameValue,
             email: emailvalue,
-            password: passwordValue,
-        }
+            password: passwordValue
+        })
     })
-        .then((e) => console.log(e));
+        .then((e) => console.log(e))
 }

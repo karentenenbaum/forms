@@ -20,7 +20,7 @@ input {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #EB5A47;
+    background-color: #126da2;
 }
 
 .form-container {
@@ -45,7 +45,7 @@ input {
     flex-direction: column;
     margin-bottom: 10px;
     font-size: 20px;
-    color:  #EB5A47;
+    color:  #126da2;
 }
 
 .input-container label {
@@ -72,7 +72,7 @@ input {
 .btn {
     margin: 10px 0;
     color: white;
-    background-color: #eb5a47;
+    background-color: #126da2;
     border-width: 0;
     font-size: large;
     padding: 5px;
