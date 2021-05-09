@@ -7,25 +7,40 @@ class LoginPage extends Page {
     /**
      * define selectors using getter methods
      */
-    get inputEmail () { return $('#emailInput') }
-    get inputPassword () { return $('#passwordInput') }
-    get btnSubmit () { return $('#login-submit') }
+    get inputEmail() {
+        return $('#emailInput')
+    }
+
+    get inputPassword() {
+        return $('#passwordInput')
+    }
+
+    get btnSubmit() {
+        return $('#login-submit')
+    }
 
 
     /**
      * Mocked values
      */
-    get invalidEmail () { return "kjt@gmail.com"}
-    get invalidPassword () { return "123123"}
+    get invalidEmail() {
+        return "kjt@gmail.com"
+    }
 
-    get shortUsername () { return "asd"}
-    get shortPassword () { return "asd"}
+    get invalidPassword() {
+        return "123123"
+    }
+
+    get loginResult() {
+        return $('#login-result')
+    }
+
 
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
      */
-    async login (username, password) {
+    async login(username, password) {
         await (await this.inputEmail).setValue(username);
         await (await this.inputPassword).setValue(password);
         await (await this.btnSubmit).click();
@@ -34,7 +49,7 @@ class LoginPage extends Page {
     /**
      * overwrite specifc options to adapt it to page object
      */
-    open () {
+    open() {
         return super.open('login');
     }
 }

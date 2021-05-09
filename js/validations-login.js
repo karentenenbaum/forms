@@ -89,11 +89,11 @@ function handleLogin() {
     })
         .then((e) => {
             console.log(e);
-            console.log('valid');
+            console.log('valid credentials');
             document.getElementById('credentials-valid').style.display = 'block';
         })
         .catch(() => {
-            console.log('invalid password');
+            console.log('invalid credentials');
             document.getElementById('credentials-invalid').style.display = 'block';
         })
 }
