@@ -28,11 +28,29 @@ class LoginPage extends Page {
     }
 
     get invalidPassword() {
-        return "123123"
+        return "123123qwe"
     }
 
     get loginResult() {
         return $('#login-result')
+    }
+
+    get checkEmail() {
+        return $('#checkEmail')
+    }
+
+    get checkPassword() {
+        return $('#checkPassword')
+    }
+
+
+    get invalidEmailFormat() {
+        return 'asdasd@w';
+    }
+
+    clearValues() {
+        this.inputEmail.clearValue();
+        this.inputPassword.clearValue();
     }
 
 
@@ -40,8 +58,8 @@ class LoginPage extends Page {
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
      */
-    async login(username, password) {
-        await (await this.inputEmail).setValue(username);
+    async login(email, password) {
+        await (await this.inputEmail).setValue(email);
         await (await this.inputPassword).setValue(password);
         await (await this.btnSubmit).click();
     }
