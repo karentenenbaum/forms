@@ -1,5 +1,5 @@
 document.getElementById('emailInput').addEventListener('blur', (e) => {
-    validationEmail(e);
+    validationEmail(e.target.value);
 });
 
 document.getElementById('emailInput').addEventListener('focus', (e) => {
@@ -7,7 +7,7 @@ document.getElementById('emailInput').addEventListener('focus', (e) => {
 });
 
 document.getElementById('passwordInput').addEventListener('blur', (e) => {
-    validationPassword(e);
+    validationPassword(e.target.value);
 });
 
 document.getElementById('passwordInput').addEventListener('focus', (e) => {
@@ -16,8 +16,14 @@ document.getElementById('passwordInput').addEventListener('focus', (e) => {
 
 document.getElementById('loginForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    showValues();
-    handleLogin();
+    //showValues();
+
+    const emailValidation = validationEmail(document.getElementById('emailInput').value);
+    const passwordValidation = validationPassword(document.getElementById('passwordInput').value);
+
+    if (emailValidation && passwordValidation) {
+        handleLogin();
+    }
 });
 
 
@@ -27,24 +33,31 @@ function checkMessageDissapears(e, field) {
 }
 
 function validationEmail(e) {
-    const value = e.target.value;
+    const value = e;
     const regex = new RegExp('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$');
     if (!regex.test(value)) {
         const checkElementOne = document.getElementById('checkEmail');
         checkElementOne.innerHTML = "E-mail field must have a valid email format";
         checkElementOne.style.display = 'block';
+
+        return false;
     }
+
+    return  true;
 }
 
 function validationPassword(e) {
-    const value = e.target.value;
+    const value = e;
     const regex = new RegExp('[A-Za-z0-9]{8,}');
     if (!regex.test(value)) {
         const checkElementTwo = document.getElementById("checkPassword");
         checkElementTwo.innerHTML = "Password field must contain at least 8 characters, consisting of letters and numbers.";
         checkElementTwo.style.display = 'block';
 
+        return false;
     }
+
+    return  true;
 }
 
 function showValues() {
@@ -74,8 +87,13 @@ function handleLogin() {
             password: passwordValue
         })
     })
-        .then((e) => console.log(e))
+        .then((e) => {
+            console.log(e);
+            console.log('valid');
+            document.getElementById('credentials-valid').style.display = 'block';
+        })
         .catch(() => {
             console.log('invalid password');
+            document.getElementById('credentials-invalid').style.display = 'block';
         })
 }

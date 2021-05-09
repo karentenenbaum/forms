@@ -63,11 +63,11 @@ function check() {
     }
 }
 
-checkForm();
-checkLabelEmail();
-checkInputEmail();
-checkLabelPassword();
-checkInputPassword();
-checkLoginButton();
-checkLink();
-check();
+// checkForm();
+// checkLabelEmail();
+// checkInputEmail();
+// checkLabelPassword();
+// checkInputPassword();
+// checkLoginButton();
+// checkLink();
+// check();
