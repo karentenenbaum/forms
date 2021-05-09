@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login form </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body>
+<main>
+    <div class="container">
+        <h1 class="title">Login</h1>
+        <div class="form-container">
+            <form action="" name="log-in" id='loginForm'>
+                <div class=input-container>
+                    <label for="email">E-mail Address:</label>
+                    <input type="email" name="email" placeholder="E-mail Address" required id="emailInput"/>
+                    <div id="checkEmail" class="errorMessage">
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" placeholder="Password" required id="passwordInput"/>
+                    <div id='checkPassword' class="errorMessage">
+                    </div>
+                </div>
+                <div class=btn-container>
+                    <button type="submit" class="btn" id="login-submit">Login</button>
+                </div>
+            </form>
+
+            <div class="a-container">
+                <a href="register.html">Don't you have an account?</a>
+            </div>
+<!--            <div id="ValidationsResults">-->
+<!--                <h2>Validations results:</h2>-->
+<!--            </div>-->
+
+            <div class="login-result">
+                <div id="credentials-valid">credentials are valid</div>
+                <div id="credentials-invalid">credentials are invalid</div>
+            </div>
+        </div>
+    </div>
+</main>
+<script type="text/javascript" src="../js/login.js"></script>
+<script type="text/javascript" src="../js/validations-login.js"></script>
+</body>
+</html>

@@ -74,5 +74,8 @@ function handleLogin() {
             password: passwordValue
         })
     })
-        .then((e) => console.log(e));
+        .then((e) => console.log(e))
+        .catch(() => {
+            console.log('invalid password');
+        })
 }

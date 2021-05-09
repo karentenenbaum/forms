@@ -90,3 +90,27 @@ input {
     color: red;
 }
 
+.login-result {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#credentials-invalid {
+    display: none;
+    border-width: 2px;
+    border-style: solid;
+    padding: 2px;
+    border-color: #EB5A47;
+    color: #EB5A47;
+}
+
+#credentials-valid {
+    display: none;
+    border-width: 2px;
+    border-style: solid;
+    padding: 2px;
+    border-color: green;
+    color: green;
+}
+
