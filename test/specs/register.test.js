@@ -7,7 +7,7 @@ describe('Register test', () => {
     })
 
     it('Test register with invalid fullname', () => {
-        registerPage.fullName.setValue(registerPage.invalidFullName);
+        registerPage.inputfullName.setValue(registerPage.invalidFullName);
         expect(registerPage.checkFullName).toHaveTextContaining('Full Name field must have more than 6 letters and at least one space in between.');
     });
 

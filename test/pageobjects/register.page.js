@@ -11,7 +11,7 @@ class RegisterPage extends Page {
         return $('#emailInput')
     }
 
-    get inputfullName() {
+    get inputFullName() {
         return $('#fullNameInput')
     }
 
@@ -67,7 +67,7 @@ class RegisterPage extends Page {
 
     clearValues() {
         this.inputEmail.clearValue();
-        this.inputfullName.clearValue();
+        this.inputFullName.clearValue();
         this.inputConfirmPassword.clearValue();
         this.inputPassword.clearValue();
     }
@@ -78,10 +78,10 @@ class RegisterPage extends Page {
      * e.g. to login using username and password
      */
     async register(email, password, confirmPassword, fullname) {
-        await (await this.fullName).setValue(fullname);
+        await (await this.inputFullName).setValue(fullname);
         await (await this.inputEmail).setValue(email);
         await (await this.inputPassword).setValue(password);
-        await (await this.confirmPassword).setValue(confirmPassword);
+        await (await this.inputConfirmPassword).setValue(confirmPassword);
         await (await this.btnSubmit).click();
     }
 
