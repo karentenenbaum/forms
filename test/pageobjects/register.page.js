@@ -89,7 +89,7 @@ class RegisterPage extends Page {
      * overwrite specifc options to adapt it to page object
      */
     open() {
-        return super.open('register');
+        return super.open('https://karentenenbaum.github.io/qa-automation-forms/html/register.html');
     }
 }
 
