@@ -32,8 +32,16 @@ document.getElementById('confirmPasswordInput').addEventListener('focus', (e) =>
 
 document.getElementById('registerForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    showValues();
-    handleRegister();
+    //showValues();
+
+    const fullNameValidation = validationFullName(document.getElementById('fullNameInput').value);
+    const emailValidation = validationEmail(document.getElementById('emailInput').value);
+    const passwordValidation = validationPassword(document.getElementById('passwordInput').value);
+    const confirmPasswordValidation = validationConfirmPassword(document.getElementById('confirmPasswordInput').value);
+
+    if(fullNameValidation && emailValidation && passwordValidation && confirmPasswordValidation) {
+        handleRegister();
+    }
 });
 
 function validationFullName(e) {
@@ -117,5 +125,13 @@ function handleRegister() {
             password: passwordValue
         })
     })
-        .then((e) => console.log(e))
+        .then((e) => {
+            console.log(e);
+            console.log('valid credentials');
+            document.getElementById('credentials-valid').style.display = 'block';
+        })
+        .catch(() => {
+            console.log('invalid credentials');
+            document.getElementById('credentials-invalid').style.display = 'block';
+        })
 }
