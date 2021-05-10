@@ -1,5 +1,5 @@
 document.getElementById('fullNameInput').addEventListener('blur', (e) => {
-    validationFullName(e);
+    validationFullName(e.target.value);
 });
 
 document.getElementById('fullNameInput').addEventListener('focus', (e) => {
@@ -7,7 +7,7 @@ document.getElementById('fullNameInput').addEventListener('focus', (e) => {
 });
 
 document.getElementById('emailInput').addEventListener('blur', (e) => {
-    validationEmail(e);
+    validationEmail(e.target.value);
 });
 
 document.getElementById('emailInput').addEventListener('focus', (e) => {
@@ -15,7 +15,7 @@ document.getElementById('emailInput').addEventListener('focus', (e) => {
 });
 
 document.getElementById('passwordInput').addEventListener('blur', (e) => {
-    validationPassword(e);
+    validationPassword(e.target.value);
 });
 
 document.getElementById('passwordInput').addEventListener('focus', (e) => {
@@ -23,7 +23,7 @@ document.getElementById('passwordInput').addEventListener('focus', (e) => {
 });
 
 document.getElementById('confirmPasswordInput').addEventListener('blur', (e) => {
-    validationConfirmPassword(e, 'checkConfirmPassword');
+    validationConfirmPassword(e.target.value, 'checkConfirmPassword');
 });
 
 document.getElementById('confirmPasswordInput').addEventListener('focus', (e) => {
@@ -45,14 +45,18 @@ document.getElementById('registerForm').addEventListener('submit', (e) => {
 });
 
 function validationFullName(e) {
-    const value = e.target.value;
+    const value = e;
     const regex = new RegExp('^(?=.*[A-Za-z])(?=.* )[A-Za-z ]{6,}$');
 
     if (!regex.test(value)) {
         const checkElement = document.getElementById('checkFullName');
         checkElement.innerHTML = "Full Name field must have more than 6 letters and at least one space in between.";
         checkElement.style.display = 'block';
+
+        return false;
     }
+
+    return true;
 }
 
 function checkMessageDissapears(e, field) {
@@ -61,24 +65,32 @@ function checkMessageDissapears(e, field) {
 }
 
 function validationEmail(e) {
-    const value = e.target.value;
+    const value = e;
     const regex = new RegExp('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$');
     if (!regex.test(value)) {
         const checkElementOne = document.getElementById('checkEmail');
         checkElementOne.innerHTML = "E-mail field must have a valid email format";
         checkElementOne.style.display = 'block';
+        return false;
     }
+
+    return true;
 }
 
 function validationPassword(e) {
-    const value = e.target.value;
+    const value = e;
     const regex = new RegExp('[A-Za-z0-9]{8,}');
     if (!regex.test(value)) {
         const checkElementTwo = document.getElementById("checkPassword");
         checkElementTwo.innerHTML = "Password field must contain at least 8 characters, consisting of letters and numbers.";
         checkElementTwo.style.display = 'block';
 
+        return false;
     }
+
+    return true;
+
+
 }
 
 function validationConfirmPassword(e) {
@@ -89,8 +101,11 @@ function validationConfirmPassword(e) {
         const checkElementThree = document.getElementById('checkConfirmPassword');
         checkElementThree.innerHTML = "Password confirmation field must be equal to the content of the Password input.";
         checkElementThree.style.display = 'block';
+
+        return false;
     }
 
+    return true;
 }
 
 function showValues() {
