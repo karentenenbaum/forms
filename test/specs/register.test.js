@@ -13,7 +13,7 @@ describe('Register test', () => {
 
     it('Test register with different password and confirm password', () => {
         registerPage.clearValues();
-        registerPage.inputfullName.setValue(registerPage.fullName);
+        registerPage.inputFullName.setValue(registerPage.fullName);
         registerPage.inputEmail.setValue(registerPage.email);
         registerPage.inputPassword.setValue(registerPage.password);
         registerPage.inputConfirmPassword.setValue(registerPage.passwordDifferent);
